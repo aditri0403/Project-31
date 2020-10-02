@@ -34,5 +34,28 @@ function draw() {
   for(var k = 0; k < divisions.length; k++){
     divisions[k].display();
   }
+  for (var j = 40; j <=width;j=j+50)
+  {
+      plinkos.push(new plinko(j,75));
+  }
+  for (var j = 15;j<=width-10;j=j+50)
+  {
+    plinkos.push(new plinko(j,175));
+  }
+  for (var j = 65; j <=width-20;j=j+50)
+  {
+      plinkos.push(new plinko(j,275));
+  }
+  for (var j = 100; j <=width;j=j+50)
+  {
+      plinkos.push(new plinko(j,375));
+  }
+  if(frameCount%60===0){
+    particles.push(new particle(random(width/2-10, width/2+10),10,10))
+  }
+  for(var k=0;k<=width;k=k+80){
+  divisions.push(new division(k, height-divisions/2,10,divisionHeight));
+  }
+  
   drawSprites();
 }
